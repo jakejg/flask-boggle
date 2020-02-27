@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Boggle</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Boggle</h1>
+        <div id="highscore">
+            High Score: {{highscore}}
+        </div>
+        <div id="score">
+            Score:
+        </div>
+        <table>
+            <tbody>
+                {% for row in board %}
+                <tr>
+                {% for letter in row %}
+                <td>{{letter}}</td>
+                {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div id="timer">
+            Time left 60 seconds
+        </div>
+        <form>
+            <input type="text" name="word" id="guess" placeholder="Enter your word here">
+            <br>
+            <button>Add word</button>
+        </form>
+        <div id="message">
+            Feedback here
+        </div>
+        
+    </div>
+    
+
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
