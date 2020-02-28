@@ -48,6 +48,6 @@ class FlaskTests(TestCase):
     
     def test_check_post(self):
         with self.client:
-            response = self.client.post('/post-score', data = {'score': '12'})
-            self.assertIn(session['highscore'], session)
+            response = self.client.post('/post-score', json = {'score': 12})
+            self.assertIn('highscore', session)
 
